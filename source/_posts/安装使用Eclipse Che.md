@@ -17,7 +17,8 @@ docker pull portainer/portainer
 基于镜像运行容器
 
 docker run -d -p 9000:9000 --restart=always -v /var/run/docker.sock:/var/run/docker.sock --name prtainer  portainer/portainer
-
+http://172.17.0.1:8080/dashboard/#/ide/che/wksp-tvqq
+http://127.0.0.1:9000/#/networks
 up: admin/yx375656
 
 ```

@@ -3,13 +3,13 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: yxzhizhi's workspace
-subtitle: '必须从过去的错误学习教训而非依赖过去的成功。'
-description: '生命不是要超越别人，而是要超越自己。'
+title: yxzhizhiの博客
+subtitle: 必须从过去的错误学习教训而非依赖过去的成功
+description: 生命不是要超越别人，而是要超越自己
 keywords: linux,java,python,node,web
 author: zhanghuo
 language: zh-Hans
-timezone: 'Asia/Shanghai'
+timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -90,14 +90,34 @@ include:
 exclude:
 ignore:
 
+
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 #theme: landscape
 theme: next
+#theme: meadow
+#theme: 3-hexo
+#theme: book
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
   repository: git@github.com:yxzhizhi/yxzhizhi.github.io.git
   branch: master
+
+live2d:
+  enable: false
+  scriptFrom: local
+  pluginRootPath: live2dw/
+  pluginJsPath: lib/
+  pluginModelPath: assets/
+  tagMode: false
+  model:
+    use: live2d-widget-model-wanko  #选择哪种模型
+  display: #放置位置和大小
+    position: left
+    width: 150
+    height: 300
+  mobile:
+    show: false #是否在手机端显示

@@ -9,6 +9,8 @@ tags:
 ---
 
 ## 常用docker命令
+
+<!--more-->
 #### 镜像管理
 ```
 列表|docker images	|查看本地docker仓库的所有镜像
@@ -24,8 +26,44 @@ docker rmi（-f） 镜像名：版本号/镜像ID 　　删除镜像 （加上 -
 docker rmi $(docker images -q)　　删除所有镜像
 docker rmi $(docker images | grep "none" | awk '{print $3}') 删除所有名字中带“none” 关键字的镜像
 
+sudo docker rmi $(sudo docker images | grep "eclipse" | awk '{print $3}')
+
 docker save docker.io``/tomcat``:7.0.77-jre7 >``/root/mytomcat7``.``tar``.gz 导出镜像`
 docker load < ``/root/mytomcat7``.``tar``.gz　　导入镜像`
+```
+```
+
+#基本命令
+#查看docker服务运行状态
+sudo systemctl status docker
+ 
+#启动docker服务
+sudo systemctl start docker
+ 
+#停止docker服务
+sudo systemctl stop docker
+ 
+#查看所有本地镜像
+sudo docker images
+ 
+#查看正在运行的容器
+sudo docker ps
+#查看所有容器
+sudo docker ps -a
+ 
+#删除本地镜像 -f表示强制删除(可选)
+sudo docker rmi -f [镜像id]
+#删除指定容器 
+sudo docker rm [容器Id|容器名]
+--
+#1 添加docker用户组(一般安装docker时会自动添加)
+sudo groupadd docker 
+#2 将指定用户添加到docker用户组中 注:将USER替换为自己的用户名
+sudo gpasswd -a USER docker
+#3 重启docker服务
+sudo systemctl restart docker
+#4 退出SSH连接，重新登录
+
 ```
 ### 容器管理
 ```
